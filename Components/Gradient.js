@@ -1,6 +1,6 @@
 
 import { StyleSheet, Text, View,  } from 'react-native';
-import Svg, { Defs, Rect, LinearGradient, Stop } from 'react-native-svg';
+import Svg, { Defs, Rect, LinearGradient, Stop, Ellipse } from 'react-native-svg';
 
 const FROM_COLOR = 'rgb(142, 139, 139)';
 const TO_COLOR = 'rgb(206,174,68)';
@@ -15,7 +15,8 @@ export default function Gradient() {
                         <Stop offset="1" stopColor={ TO_COLOR }/>
                     </LinearGradient>
                 </Defs>
-                <Rect width="100%" height="100%" fill="url(#grad)"/>
+                 <Rect width="100%" height="100%" fill="url(#grad)"/>
+                {/*<Ellipse cx="0%" cy="0%" rx="80%" ry="80%" fill="url(#grad)" /> */}
             </Svg>
     );
 }

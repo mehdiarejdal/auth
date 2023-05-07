@@ -1,18 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import Header from './Component/Header.js';
-import Statistic from './Component/Statistic.js';
-import Footer from './Component/Footer.js';
+import { StyleSheet, Text, View, ScrollView, FlatList, SafeAreaView } from 'react-native';
+import Header from './Components/Header.js';
+import Statistic from './Components/Statistic.js';
+import Footer from './Components/Footer.js';
+import Test from './Components/Test.js';
+
+
+const data = [
+  {info:"Formations", value:30},
+  {info:"Professeurs", value:10},
+  {info:"Etudiants", value:300}
+
+];
+
+const renderItem = ({ item }) => {
+  return <Text style={[styles.flat, {color:'white'}]}>{item.title}</Text>;
+};
 
 
 export default function App() {
   return (
     
-    <View style={styles.container}>
-    <StatusBar style="auto" hideTransitionAnimation='fade' hidden={false} />
+    <SafeAreaView style={styles.container}>
+    <StatusBar style="light" hideTransitionAnimation='fade' hidden={false} />
     <Header />
 
     <View style={styles.body}>
+
+    {/*
       <ScrollView 
       alwaysBounceHorizontal={false}
       alwaysBounceVertical={false}
@@ -23,12 +38,22 @@ export default function App() {
           <Statistic info="Formations" value={30} />
           <Statistic info="Professeurs" value={10} />
           <Statistic info="Etudiants" value={300} />
-          
-        </ScrollView>
+          <Statistic info="Formations" value={30} />
+          <Statistic info="Professeurs" value={10} />
+          <Statistic info="Etudiants" value={300} />
+
+        </ScrollView> */}
+
+    <FlatList
+          data={data}
+          renderItem={({item}) => <Statistic info={item.info} value={item.value}/>}
+        />
+
     </View>
     
     <Footer/>
-    </View>
+    </SafeAreaView>
+    
   );
 }
 
@@ -42,12 +67,9 @@ const styles = StyleSheet.create({
     //borderWidth: 2,
     borderBottomLeftRadius:50,
     borderBottomRightRadius:50,
-    marginTop: '7%',
     //paddingHorizontal: '3%',
-    flexDirection: 'column',
-    justifyContent:'flex-start',
   },
- 
+
   body: {
     borderColor: '#00FF00',
     borderWidth: 0,
@@ -60,7 +82,9 @@ const styles = StyleSheet.create({
     paddingTop: '6%',
   },
 
-
+  flat:{
+    fontSize:20
+  }
 
 
 

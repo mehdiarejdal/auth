@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, Alert } from 'react-native';
 
+<Button title='test' onPress={()=>{Alert.alert(' Button ')}}/>
 
 export default function App() {
   return (
@@ -37,7 +38,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   footer: {
-    backgroundColor: '#344ABC',
+    backgroundColor: '#000000',
     borderColor: '#0000FF',
     //borderWidth: 2,
     //borderBottomLeftRadius:30,
