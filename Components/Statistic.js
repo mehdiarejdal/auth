@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
   stat_component: {
     //backgroundColor:'#D9D9D9',
-    borderColor: '#000000',
+    borderColor: '#D9D9D9',
     borderWidth: 5,
     borderRadius:16,
     margin:'2%',
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    width: 330,
+    width: '90%',
     height: 140,
 
   },
