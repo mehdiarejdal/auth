@@ -2,12 +2,11 @@
 import { StyleSheet, Text, View,  } from 'react-native';
 import Gradient from './Gradient';
 
-export default function Statistic(props) {
+export default function CardTableau(props) {
   return (
     
+  
       <View style={styles.stat_component}>
-      
-      <Gradient/>
         <View style={styles.stat_label}>
           <Text style={styles.stat_label_text}>Total des {props.info}:</Text>
         </View>
@@ -23,31 +22,38 @@ export default function Statistic(props) {
 const styles = StyleSheet.create({
 
 
+  container:{
+    padding:5,
+  borderWidth:6,
+  borderRadius:15,
+  borderColor: '#FF0000',
+  padding:0,
+
+},
   stat_component: {
-    //backgroundColor:'#D9D9D9',
+    backgroundColor:'lightblue',
     borderColor: '#D9D9D9',
-    borderWidth: 5,
+    borderWidth: 2,
     borderRadius:16,
-    margin:'2%',
+    marginVertical:'1%',
+    marginHorizontal:'3%',
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'flex-start',
     width: '90%',
-    height: 140,
+    height: 145,
 
   },
   
   stat_label: {
     borderColor: 'yellow',
-    //borderWidth: 1,
+    borderWidth: 1,
     flex: 3,
-    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    height:90,
-    padding: '3%',
-    paddingLeft:'4%'
+    height:'75%',
+    paddingHorizontal:'5%',
   },
 
   stat_label_text:{
@@ -59,12 +65,11 @@ const styles = StyleSheet.create({
 
   stat_value: {
     borderColor: 'orange',
-    //borderWidth: 1,
+    borderWidth: 1,
     flex: 3,
-    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    height:90,
+    height:'50%',
     marginTop: '17%',
     //paddingLeft:'4%'
   },

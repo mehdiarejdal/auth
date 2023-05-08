@@ -1,94 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView, FlatList, SafeAreaView } from 'react-native';
+
+import React from 'react';
+import { SafeAreaView,  StyleSheet, StatusBar, View} from 'react-native';
+
+import MainContainer from './Screens/MainContainer';
 import Header from './Components/Header.js';
-import Statistic from './Components/Statistic.js';
-import Footer from './Components/Footer.js';
-import Test from './Components/Test.js';
 
 
-const data = [
-  {info:"Formations", value:30},
-  {info:"Professeurs", value:10},
-  {info:"Etudiants", value:300}
 
-];
-
-const renderItem = ({ item }) => {
-  return <Text style={[styles.flat, {color:'white'}]}>{item.title}</Text>;
-};
-
-
-export default function App() {
+const App =()=> {
   return (
+   
     
-    <SafeAreaView style={styles.container}>
-    <StatusBar style="light" hideTransitionAnimation='fade' hidden={false} />
-    <Header />
+      <SafeAreaView style={styles.container}>
+        <StatusBar style="dark" hideTransitionAnimation='fade' hidden={false} />
+        <Header />
+        <MainContainer /> 
 
-    <View style={styles.body}>
-
-    {/*
-      <ScrollView 
-      alwaysBounceHorizontal={false}
-      alwaysBounceVertical={false}
-      automaticallyAdjustsScrollIndicatorInsets={false}
-      bounces={false}
-      directionalLockEnabled={true}>
+      </SafeAreaView>
       
-          <Statistic info="Formations" value={30} />
-          <Statistic info="Professeurs" value={10} />
-          <Statistic info="Etudiants" value={300} />
-          <Statistic info="Formations" value={30} />
-          <Statistic info="Professeurs" value={10} />
-          <Statistic info="Etudiants" value={300} />
-
-        </ScrollView> */}
-
-    <FlatList
-          data={data}
-          renderItem={({item}) => <Statistic info={item.info} value={item.value}/>}
-        />
-
-    </View>
     
-    <Footer/>
-    </SafeAreaView>
+      
     
   );
 }
 
-
-
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#151B22',
     flex: 1,
-    borderColor: '#FFFFFF',
-    //borderWidth: 2,
-    borderBottomLeftRadius:50,
-    borderBottomRightRadius:50,
-    //paddingHorizontal: '3%',
+    backgroundColor: '#fff',
+    borderColor:'orange',
+    borderWidth:4,
+    
+  },
+  container: {
+    flex: 1,
   },
 
-  body: {
-    borderColor: '#00FF00',
-    borderWidth: 0,
-    margin:0,
-    flex: 7,
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'stretch',
-    padding: '2%',
-    paddingTop: '6%',
+  mainContainer: {
+    flex: 5,
+    
   },
-
-  flat:{
-    fontSize:20
-  }
-
-
-
-
-
   
 });
+
+export default App;
