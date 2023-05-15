@@ -1,0 +1,56 @@
+Arguments: 
+  G:\Program Files\node.exe C:\Users\MEHDI\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\app\MEHDI\product\21c\dbhomeXE\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;G:\Program\Git\cmd;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\sbt\bin;G:\Program Files\;C:\Program Files\apache-maven-4.0.0-alpha-5-bin\bin;%JAVA-HOME%\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\MEHDI\AppData\Local\Microsoft\WindowsApps;C:\Users\MEHDI\AppData\Local\Programs\Microsoft VS Code\bin;C:\spark\bin;%JAVA_HOME%\bin;C:\Users\MEHDI\AppData\Roaming\npm;H:\IntelliJ IDEA 2023.1.1\bin;
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.15.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: true/expo: Invalid URI "true/expo"
+      at module.exports.Request.init (C:\Users\MEHDI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140978:31)
+      at new Request (C:\Users\MEHDI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140832:8)
+      at request (C:\Users\MEHDI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:137738:10)
+      at RequestManager.execute (C:\Users\MEHDI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66197:15)
+      at RequestManager.shiftQueue (C:\Users\MEHDI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66235:10)
+      at C:\Users\MEHDI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:65905:13
+      at new Promise (<anonymous>)
+      at new F (C:\Users\MEHDI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:5305:28)
+      at RequestManager.request (C:\Users\MEHDI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:65903:19)
+      at NpmRegistry.<anonymous> (C:\Users\MEHDI\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:31751:42)
+
+npm manifest: 
+  {
+    "name": "auth",
+    "version": "1.0.0",
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web"
+    },
+    "dependencies": {
+      "expo": "~48.0.15",
+      "expo-status-bar": "~1.4.4",
+      "react": "18.2.0",
+      "react-native": "0.71.7"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.20.0"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
