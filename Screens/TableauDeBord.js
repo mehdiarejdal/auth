@@ -13,22 +13,22 @@ export default function TableauDeBord() {
     
     <View style={styles.container}>
     <View style={styles.ligne}>
-    <CardTableau iconName="library-outline" info='Formations' value={300}/>
-    <CardTableau iconName="library-outline" info='Formations' value={30}/>
     
-    
-
-    </View>
-
-    <View style={styles.ligne}>
     <CardTableau iconName="school-outline" info='Professeurs' value={30}/>
-    <CardTableau iconName="school-outline" info='Professeurs' value={300}/>
+    <CardTableau iconName="people-circle-outline" info='Etudiants' value={300}/>
+    
 
     </View>
 
     <View style={styles.ligne}>
-    <CardTableau iconName="people-circle-outline" info='Professeurs' value={30}/>
-    <CardTableau iconName="logo-usd" info='Professeurs' value={300}/>
+    <CardTableau iconName="library" info='Formations' value={30}/>
+    <CardTableau iconName="library" info='Ventes' value={30}/>
+
+    </View>
+
+    <View style={styles.ligne}>
+    
+    <CardTableau iconName="logo-usd" info='Somme des ventes (DHS)' value={300}/>
 
     </View>
    
@@ -55,7 +55,14 @@ const styles = StyleSheet.create({
     //borderWidth: 2,
     flex:2,
     flexDirection:'row',
-    //justifyContent:'center'
+    alignItems:'center'
+  },
+  ligneS:{
+    borderColor: '#0000FF',
+    //borderWidth: 2,
+    flex:2,
+    flexDirection:'row',
+    alignItems:'center'
   },
   
 

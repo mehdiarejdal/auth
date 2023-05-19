@@ -3,16 +3,16 @@ import { StyleSheet, Text, View,  } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 
-export default function CardTableau(props) {
+export default function CardTableauS(props) {
   return (
     
   <View style={styles.bloc}>
     <View style={styles.head}>
       <View >
-      <Ionicons name={props.iconName} size={45} color={'white'} />
+      <Ionicons name={props.iconName} size={65} color={'white'} />
       </View>
       <View style={styles.title}>
-      <Text style={styles.title_text}>{props.info}</Text>
+      <Text style={styles.title_text}>d</Text>
       </View>
     </View>
 
@@ -30,30 +30,37 @@ const styles = StyleSheet.create({
 
   bloc:{
     borderColor: '#00FFFF',
-    //borderWidth: 4,
+    borderWidth: 4,
     flex:1,
     flexDirection:'column',
-    padding:'4%',
-    margin:'3%',
     backgroundColor:'#4E6CFF',
-    borderRadius:15
+    borderRadius:15,
+    margin:'2%', 
+    marginVertical:'4%',
+    padding:'4%',
+    //paddingVertical:'0%', 
     
-
   },
   head:
   { flex:1, 
     flexDirection:'row',
     justifyContent:'space-between',
-    alignItems:'flex-start'},
-  title:
-  {alignSelf:'center', 
-    paddingBottom:'0%',
-    marginBottom:'7%',
+    alignItems:'flex-start',
     borderColor: '#00FFFF',
-    //borderWidth: 4,
+    borderWidth: 4,
+  
   },
+  title:
+  {
+    borderColor: '#00FFFF',
+    borderWidth: 4,
+    alignSelf:'center', 
+    paddingBottom:'13%'},
   title_text:
-  {fontSize:17,
+  {
+    borderColor: '#00FFFF',
+    borderWidth: 4,
+    fontSize:25,
     fontWeight:'500', 
     color:'white',},
   value:{

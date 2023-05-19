@@ -48,7 +48,7 @@ export default function CardProfesseur(props) {
 
         <View style={[styles.box, {borderLeftWidth:1,borderRightWidth:1, borderColor: 'white',}]}>
         <View style={styles.box_title}>
-        <Text style={styles.box_title_text}>Achats</Text>
+        <Text style={styles.box_title_text}>Total (Ventes)</Text>
         </View>
         <View style={styles.box_value}>
         <Text style={styles.box_value_text}> {nb_transaction}</Text>

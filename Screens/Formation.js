@@ -1,8 +1,7 @@
 
 import { StyleSheet, View, ScrollView, FlatList,  } from 'react-native';
-import CardTableau from '../Components/CardTableau.js';
-import tableaudebord from '../Arrays/tableaudebord.js';
-
+import course from '../Arrays/course.js';
+import CourseCard from '../Components/CourseCard.js';
 
 
 
@@ -13,8 +12,8 @@ export default function Formation() {
 
     <FlatList
       style={styles.list_container}
-      data={tableaudebord}
-      renderItem={({item}) => <CardTableau info={item.info} value={item.value}/>}
+      data={course}
+      renderItem={({item}) => <CourseCard  course={item} />}
         />
 
     </View>

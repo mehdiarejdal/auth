@@ -20,7 +20,7 @@ const MainContainer =()=> {
         <NavigationContainer >
         <Tab.Navigator 
         
-        initialRouteName='TableauDeBord'
+        initialRouteName='Formation'
         screenOptions={
             ({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
