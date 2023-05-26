@@ -1,4 +1,4 @@
-import { View , Text , TouchableOpacity, TextInput,StyleSheet} from "react-native";
+import { View , Text , TouchableOpacity, TextInput,StyleSheet,Image} from "react-native";
 import {useNavigation } from '@react-navigation/native'
 import { firebase } from "../config";
 import React, {useState} from 'react';
@@ -16,19 +16,20 @@ const Login = () => {
   }
   return (
     <View style={styles.container}>
+      <Image style={styles.image} source={require('./LOGO.png')} /> 
       <Text style={{fontWeight:'bold', fontSize:26}}></Text>
         <TextInput
           style={styles.textInput}
           value={email}
-          placeholder="Enter email"
-          onChangeText={text => setEmail(text)}
+          placeholder="Email"
+          onChangeText={(email) => setEmail(email)}
           autoCorrect={false}
         />
 
         <TextInput
           style={styles.input}
           value={password}
-          placeholder="Enter password"
+          placeholder="Password"
           onChangeText={text => setPassword(text)}
           secureTextEntry
         />
@@ -37,14 +38,14 @@ const Login = () => {
         onPress={() => loginUser(email,password)}
         style={styles.button}
         >
-<Text style={{fontWeight:'bold', fontSize:22}}></Text>
+<Text style={{fontWeight:'bold', fontSize:22}}>Login</Text>
 
         </TouchableOpacity>
         <TouchableOpacity
         onPress={() => navigation.navigate('Registration')}
         style={{marginTop:20}}
         >
-<Text style={{fontWeight:'bold', fontSize:22}}>Don't have an account?</Text>
+<Text style={{fontWeight:'bold', fontSize:18}}>Don't have an account?</Text>
 
         </TouchableOpacity>
 
@@ -65,9 +66,13 @@ const styles = StyleSheet.create({
     marginBottom:10,
     textAlign:'center'
 },
+image: {
+  marginBottom: 30,
+  width: 160, height: 150
+},
 button:{
   marginTop:50,
-  height:70,
+  height:50,
   width:250,
   backgroundColor:'#026efd',
   alignItems:"center",
