@@ -6,8 +6,8 @@ import React , {useState, useEffect} from 'react';
 import { firebase } from "./config";
  import Login from './src/Login';
  import Registration from './src/Registration';
- import Dashboard from './src/Dashboard';
- import Header from './components/Header';
+ import MainContainer from './Screens/MainContainer';
+ import Header from './Components/Header';
 
  const Stack = createStackNavigator();
   
@@ -51,16 +51,17 @@ height: 110, borderBottomLeftRadius: 50, borderBottomRightRadius: 50, background
   return (
     <Stack.Navigator>
       <Stack.Screen
- name="Dashboard"
-  component={Dashboard}
+ name="MainContainer"
+  component={MainContainer}
   options={{
-headerTitle: () => <Header name= "Dashboard" />,
+headerTitle: () => <Header name= "MainContainer" />,
 headerStyle: {
-height: 150, borderBottomLeftRadius: 50, borderBottomRightRadius: 50, backgroundColor: '#00e4de', shadowColor:'#000',
+height: 50, borderBottomLeftRadius: 50, borderBottomRightRadius: 50, backgroundColor: '#005be4', shadowColor:'#000',
 }}} />
     </Stack.Navigator>
   );
  }
+
 
  export default () => {
   return (
