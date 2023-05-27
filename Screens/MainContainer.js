@@ -6,8 +6,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons'
 
 import Formation from './Formation.js';
-import Professeur from './Professeur.js';
-import TableauDeBord from './TableauDeBord.js';
+import AddCourses from './AddcoursesScreen.js';
+import Profile from './Profile.js';
 
 
 
@@ -26,11 +26,11 @@ const MainContainer =()=> {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
-            if (route.name === 'TableauDeBord') {
+            if (route.name === 'Profile') {
               iconName = focused
                 ? 'speedometer'
                 : 'speedometer-outline';
-            } else if (route.name === 'Professeur') {
+            } else if (route.name === 'AddCourses') {
               iconName = focused ? 'school' : 'school-outline';
             } else if (route.name === 'Formation') {
               iconName = focused ? 'library' : 'library-outline';
@@ -47,8 +47,8 @@ const MainContainer =()=> {
           labelStyle:{},
         }}
       > 
-          <Tab.Screen name="TableauDeBord" component={TableauDeBord} />
-          <Tab.Screen name="Professeur" component={Professeur} />
+          <Tab.Screen name="Profile" component={Profile} />
+          <Tab.Screen name="AddCourses" component={AddCourses} />
           <Tab.Screen name="Formation" component={Formation} />
         </Tab.Navigator>
         </NavigationContainer>      
