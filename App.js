@@ -43,7 +43,7 @@ height: 0, borderBottomLeftRadius: 50, borderBottomRightRadius: 50, backgroundCo
   options={{
 headerTitle: () => <Header name= "sign in/up" />,
 headerStyle: {
-height: 110, borderBottomLeftRadius: 50, borderBottomRightRadius: 50, backgroundColor: '#005be4', shadowColor:'#000',
+height: 20, borderBottomLeftRadius: 50, borderBottomRightRadius: 50, backgroundColor: '#005be4', shadowColor:'#000',
 }}} />
 </Stack.Navigator>
     )

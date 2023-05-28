@@ -1,29 +1,21 @@
-
-import { StyleSheet, View, ScrollView, FlatList, Text, TextInput , Button} from 'react-native';
+import { StyleSheet, View, Text, TextInput, Button } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-//import CardProfesseur from '../Components/CardProfesseur.js';
-import AddCourses from '../Arrays/professeur';
 import React, { useState } from 'react';
-import { ref, set, update, onValue, remove  } from 'firebase/database';
-import { db } from '../config.js';
-
-
-
+import { ref, set, onValue, remove } from 'firebase/database';
+import { database } from '../config';
 
 export default function AddCoursesScreen() {
   const [title, setTitle] = useState('');
-  const [timing, setTiming] = useState('');
-  const [numberChapters, setNumberChapters] = useState('');
-  const [rating, setRating] = useState('');
-  const [URL, setURL] = useState('');
+  const [instructor, setInstructor] = useState('');
+  const [duration, setDuration] = useState('');
+  const [image, setImage] = useState('');
 
   const create = () => {
-    update(ref(db, 'courses/' + title), {
+    set(ref(database, 'courses/' + title), {
       title: title,
-      timing: timing,
-      numberChapters: numberChapters,
-      rating: rating,
-      URL: URL,
+      instructor: instructor,
+      duration: duration,
+      image: image,
     })
       .then(() => {
         alert('Data updated');
@@ -32,32 +24,36 @@ export default function AddCoursesScreen() {
         alert(error);
       });
   };
+
   function readData() {
-    const starCountRef = ref(db, 'courses/' + title);
+    const starCountRef = ref(database, 'courses/' + title);
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
-  
+
       if (data) {
         setTitle(data.title);
-        setTiming(data.timing);
-        setNumberChapters(data.numberChapters);
-        setRating(data.rating);
-        setURL(data.URL);
+        setInstructor(data.instructor);
+        setDuration(data.duration);
+        setImage(data.image);
       } else {
-        // Handle the case when the data is null or doesn't exist
-        // For example, you can display an error message or set a default value
         setTitle('Data not found');
       }
+    }, {
+      onlyOnce: true // Add this option to retrieve the data only once
     });
-    
-    
   }
+
   function deleteData() {
-     remove(ref(db, 'courses/' + title));
-     alert('removed') ; 
+    remove(ref(database, 'courses/' + title))
+      .then(() => {
+        alert('Data removed');
+      })
+      .catch((error) => {
+        alert(error);
+      });
   }
+
   return (
-    
     <View style={styles.container}>
       <Text>Add a Course</Text>
 
@@ -68,29 +64,24 @@ export default function AddCoursesScreen() {
         style={styles.input}
       />
       <TextInput
-        placeholder="Timing"
-        value={timing}
-        onChangeText={(text) => setTiming(text)}
+        placeholder="Instructor"
+        value={instructor}
+        onChangeText={(text) => setInstructor(text)}
         style={styles.input}
       />
       <TextInput
-        placeholder="Number of Chapters"
-        value={numberChapters}
-        onChangeText={(text) => setNumberChapters(text)}
+        placeholder="Duration"
+        value={duration}
+        onChangeText={(text) => setDuration(text)}
         style={styles.input}
       />
       <TextInput
-        placeholder="Rating"
-        value={rating}
-        onChangeText={(text) => setRating(text)}
+        placeholder="Image"
+        value={image}
+        onChangeText={(text) => setImage(text)}
         style={styles.input}
       />
-      <TextInput
-        placeholder="URL"
-        value={URL}
-        onChangeText={(text) => setURL(text)}
-        style={styles.input}
-      />
+
       <Button title="Submit Data" onPress={create} />
       <Button title="Read Data" onPress={readData} />
       <Button title="Delete Data" onPress={deleteData} />
