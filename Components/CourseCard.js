@@ -6,9 +6,10 @@ import { useState } from 'react';
 
 
 
-const CourseCard = ({ course }) => {
+const CourseCard = ({ course }) => {// somme des etudiants achetants une formation
 
 const [showing,setShowing]=useState(false);
+const nb_etudiant=course.formation? Object.keys(course.formation).length:0;
 
 function click(){
   setShowing(!showing);
@@ -23,34 +24,34 @@ function icon(showing){
   }
 }
 
-function details(showing,note, nb_vente, sm_vente){
+function details(showing,duree, prix, etudiants){
   if(showing===true){
     return  <View style={styles.details}>
     
       <View style={styles.box}>
       <View style={styles.box_title}>
-      <Text style={styles.box_title_text}>Note </Text>
+      <Text style={styles.box_title_text}>Durée </Text>
       </View>
       <View style={styles.box_value}>
-      <Text style={styles.box_value_text}> {note}</Text>
+      <Text style={styles.box_value_text}> {duree}</Text>
       </View>
       </View>
 
       <View style={[styles.box, {borderLeftWidth:1,borderRightWidth:1, borderColor: 'white',}]}>
       <View style={styles.box_title}>
-      <Text style={styles.box_title_text}>Total (Ventes)</Text>
+      <Text style={styles.box_title_text}>Prix (MAD)</Text>
       </View>
       <View style={styles.box_value}>
-      <Text style={styles.box_value_text}> {nb_vente}</Text>
+      <Text style={styles.box_value_text}> {prix}</Text>
       </View>
       </View>
 
       <View style={styles.box}>
       <View style={styles.box_title}>
-      <Text style={styles.box_title_text}>Total (MAD)</Text>
+      <Text style={styles.box_title_text}>Achats</Text>
       </View>
       <View style={styles.box_value}>
-      <Text style={styles.box_value_text}> {sm_vente}</Text>
+      <Text style={styles.box_value_text}> {etudiants}</Text>
       </View>
       </View>
 
@@ -62,17 +63,17 @@ function details(showing,note, nb_vente, sm_vente){
   return (
     <View style={styles.marge}>
     <Pressable style={styles.container} onPress={click}>
-      <Image source={{ uri: course.image }} style={styles.image} />
+      <Image source={{ uri: course.imageURL }} style={styles.image} />
       <View style={styles.detailss}>
-        <Text style={styles.title}>{course.title}</Text>
-        <Text style={styles.instructor}>{course.instructor}</Text>
+        <Text style={styles.title}>{course.titre}</Text>
+        <Text style={styles.instructor}>{course.professeur}</Text>
       </View>
       <View style={styles.icon2} >
       {icon(showing)}
       </View>
       
     </Pressable>
-    {details(showing, course.note, course.nb_vente, course.sm_vente)}
+    {details(showing, course.duree, course.prix, nb_etudiant)} 
     </View>
   );
 }

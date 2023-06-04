@@ -29,4 +29,19 @@ const course = [
   ];
   
   export default course;
+
+
+/**
+ * {
+        title: 'Machine Learning',
+        instructor: 'Daoudi',
+        duration:'10h30min',
+        image: 'https://i0.wp.com/www.wi6labs.com/wp-content/uploads/2019/12/Machine-learning-logo.png?resize=300%2C197&ssl=1',
+        prix:44,
+        etudiants:66
+      
+      },
+ */
+      export function getcourse() {
   
+      }

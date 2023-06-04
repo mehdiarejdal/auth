@@ -9,6 +9,7 @@ import { useState } from 'react';
 export default function CardProfesseur(props) {
 
   const [showing,setShowing]=useState(false);
+  
 
   function RightColor(sex){
     if(sex==='M'){
@@ -33,7 +34,7 @@ export default function CardProfesseur(props) {
     }
   }
 
-  function details(showing,nb_formation, nb_transaction, sm_transaction){
+  function details(showing,nb_formation, nb_transaction){//(.. , sm_transaction)
     if(showing===true){
       return  <View style={styles.details}>
       
@@ -54,7 +55,7 @@ export default function CardProfesseur(props) {
         <Text style={styles.box_value_text}> {nb_transaction}</Text>
         </View>
         </View>
-
+        {/*
         <View style={styles.box}>
         <View style={styles.box_title}>
         <Text style={styles.box_title_text}>Total (MAD)</Text>
@@ -63,6 +64,7 @@ export default function CardProfesseur(props) {
         <Text style={styles.box_value_text}> {sm_transaction}</Text>
         </View>
         </View>
+        */}
 
       </View>
     }

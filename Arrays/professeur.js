@@ -1,11 +1,11 @@
 const professeur = [
     {
-        id: 1,
+        //id: 1,
         name: 'Hnida Meriem',
-        info: 'Laureat de l\'ESI. Professeur, actuellemet, à l\'ESI. bla bla bla',
+        //info: 'Laureat de l\'ESI. Professeur, actuellemet, à l\'ESI. bla bla bla',
         nb_formation:3,
         nb_transaction:5,
-        sm_transaction:30,
+        //sm_transaction:30,
         sex:'F'
       },
       {
@@ -92,3 +92,14 @@ const professeur = [
   
   ];
   export default professeur
+/*
+{
+        name: 'Hnida Meriem',
+        nb_formation:3,
+        nb_transaction:5,
+        sex:'F'
+      },
+      */
+export function getProf() {
+  
+}

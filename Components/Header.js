@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const NavigationBar = () => {
+
+
   return (
     <View style={styles.container}>
     <View style={styles.logo}>
@@ -11,11 +13,11 @@ const NavigationBar = () => {
         placeholder="Search courses"
         style={styles.searchBar}
         placeholderTextColor={'grey'}
-      /> */}
+      /> 
       <View style={styles.profil_button}>
-      <TouchableOpacity onPress={()=>{Alert.alert("Hi! This is profil")} } >
+      <TouchableOpacity onPress={handleNavigation} >
         <Ionicons name="person-outline" size={28} color={'#4E6CFF'} />
-      </TouchableOpacity></View>
+      </TouchableOpacity></View>*/}
     </View>
   );
 };
