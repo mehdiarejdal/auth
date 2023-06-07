@@ -39,7 +39,8 @@ npm install (Installez les dépendances du projet)
 npm install -g react-native expo
 expo start (Démarrez l'application avec Expo )
 +(Utilisez l'application Expo Go sur votre appareil mobile ou un émulateur pour scanner le code QR et lancer l'application.)
-## Utilisation/ Conception 
+## Utilisation
+
 ###interface étudiant:
 
 
