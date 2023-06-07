@@ -53,6 +53,12 @@ https://github.com/ChakiB63/Dev_mobile/assets/112899151/e065c6f0-8e5e-4280-8d33-
 https://github.com/ChakiB63/Dev_mobile/assets/112899151/812d6f29-389c-4a94-bcd6-582c62dc8997
 
 
+###interface professeur:
+
+
+
+https://github.com/ChakiB63/Dev_mobile/assets/112899151/79ae178e-5281-4a71-83c6-3e141ae1d859
+
 
 
 
